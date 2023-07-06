@@ -1,19 +1,22 @@
 import React from 'react'
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from './Home'
-import Login from './components/Login/Login'
-import Signup from './components/Login/Signup';
-import Header from './components/Layout/Header';
+import { Routes, Route,BrowserRouter } from "react-router-dom";
+import Home from './Components/Home'
+import Auth from './Components/Login/Auth'
+import Login from './Components/Login/Login'
+import Search from './Components/Search'
+import Navbar from './Components/Navbar/Navbar'
+import CurrentOrder from './Components/CurrentOrder';
 
 export default function App() {
- 
   return(
     <BrowserRouter>
-      <Header />
-        <Routes >
-          <Route path = "/signup" element = {<Signup/>}/>  
+      <Navbar />
+        <Routes> 
           <Route path = "/login" element = {<Login/>}/> 
-          <Route path = "/" element = {<Home/>}/>  
+          <Route path = "/home" element = {<Home/>}/>  
+          <Route path = "/" element = {<Auth/>}/>   
+          <Route path = "/search" element = {<Search/>}/> 
+          <Route path = "/current" element = {<CurrentOrder/>}/> 
          </Routes> 
       </BrowserRouter>
   )

@@ -1,44 +1,41 @@
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom";
 
-export default function Signup({onLogin}) { 
-  const [email,setEmail] = useState("")
+export default function Auth() {  
+  const [username,setUsername] = useState("") 
   const [password, setPassword] = useState("");
-  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/signup", {
+    fetch("/users", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        email, 
+        username, 
         password
       }),
     })
       .then((r) => r.json())
       .then((user) =>{
+        setUsername(user) 
         console.log(user)
-        setEmail(user) 
       } ); 
   }
-
   return (
     <div className="container m-5 d-flex justify-content-center w-50">   
         <form onSubmit={handleSubmit}>
-        <h5 className='display-5'>Welcome Back!</h5> 
+        <h5 className='display-5'>Signup</h5> 
             <div className="form-group"> 
-                <label id='email'>Email address</label>
-                <input type="email" className="form-control" id='email' value={email}   onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" />
+                <label id='username'>Username </label>
+                <input type="username" className="form-control" id='username' value={username}   onChange={(e) => setUsername(e.target.value)} placeholder="Enter username" />
             </div>
             <div className="form-group">
                 <label id='password'>Password</label>
                 <input type="password" id='password' value={password}  onChange={(e) => setPassword(e.target.value)} className="form-control"  placeholder="Password" />
             </div>
 
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">SignUp</button>
         </form>
     </div>
   )
