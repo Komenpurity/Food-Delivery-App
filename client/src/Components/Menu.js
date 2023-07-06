@@ -17,6 +17,7 @@ export default function Menu({menu}) {
     <table className="table table-striped table-bordered">
         <thead>
             <tr>
+            <th>Aisle</th>
             <th>Name</th>
             <th>Price</th>
             <th>Action</th> 
@@ -24,8 +25,8 @@ export default function Menu({menu}) {
             </tr>
         </thead>
         <tbody>
-        {menu.ingredients?.map((r,index) => {  
-                return <MenuDisplay handleAddCart={handleAddCart} index={index} key={r.index} name={r.name} price={r.price}/> 
+        {menu.extendedIngredients?.map((r) => {  
+                return <MenuDisplay handleAddCart={handleAddCart} aisle={r.aisle} key={r.id} name={r.name} price={r.amount}/> 
             })} 
         </tbody>
     </table>

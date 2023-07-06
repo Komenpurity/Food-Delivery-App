@@ -18,7 +18,7 @@ export default function Navbar() {
       </li>
 
       <li className="nav-item active">
-        <Link to="/" className="nav-link text-white">CurrentOrder</Link>
+        <Link to="/current" className="nav-link text-white">CurrentOrder</Link>
       </li>
 
       <li className="nav-item active">

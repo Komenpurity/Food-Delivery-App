@@ -9,10 +9,10 @@ export default function Search() {
     e.preventDefault()
     //console.log(search)  
 
-    fetch(`https://api.spoonacular.com/food/products/search?query=${search}&number=15&apiKey=e1ffb6e25dff428c9f521caa613110e1`)
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${search}&maxFat=25&number=10&apiKey=e1ffb6e25dff428c9f521caa613110e1`)
     .then(response => response.json())
     .then(data => {
-     // console.log(data)
+     console.log(data)
       setValue(data) 
     })}
 
@@ -20,13 +20,13 @@ export default function Search() {
 
   return (
     <div className='container m-4'>  
-      <h6 className='display-6'>Find Products<i className="bi bi-search"></i></h6>
+      <h6 className='display-6 text-center'>Find Meals<i className="bi bi-search"></i></h6>
         <hr/>
-        <input type="text" onChange={(e) => setSearch(e.target.value)} className='form-control d-inline  w-50 m-2' placeholder="Search Products eg.Pizza,Apple" />
+        <input type="text" onChange={(e) => setSearch(e.target.value)} className='form-control d-inline  w-50 m-2' placeholder="Search Meals eg.Pizza,Pasta" />
         <button type="submit" onClick={handleSearch} className="btn btn-primary">Search</button>
          
          <div className='row'>
-            {value.products?.map(r => {
+            {value.results?.map(r => {
                return <SearchDisplay key={r.id} url={r.image}  name={r.title} />
               })} 
          </div>
