@@ -18,7 +18,7 @@ news_dataset()
 
 puth = User.create(username: 'Puth',password_digest:'1234')
 purity = User.create(username: 'Purity',password_digest: '1234') 
-order1 = Order.create(user_id: 1,address: '254Kenya',product: 'Pizza',amount: 1,price: 14.99)
-order2 = Order.create(user_id: 2, address: '23Kayo', product: 'Pasta',amount: 2,price: 20.64) 
+order1 = Order.create(product_id: 1,address: '254Kenya',product: 'Pizza',amount: 1,price: 14.99)
+order2 = Order.create(product_id: 2, address: '23Kayo', product: 'Pasta',amount: 2,price: 20.64) 
 
 
