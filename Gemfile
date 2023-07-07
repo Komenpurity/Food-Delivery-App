@@ -20,6 +20,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
  gem 'bcrypt', '~> 3.1.11'
  gem 'dotenv-rails' 
  gem 'rest-client', '~> 2.1'
+ gem 'active_model_serializers'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

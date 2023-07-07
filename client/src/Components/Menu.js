@@ -3,7 +3,7 @@ import MenuDisplay from './MenuDisplay'
 import CoverImg from './CoverImg'
 
 export default function Menu({menu}) { 
-   // console.log(menu.ingredients) 
+   // console.log(menu) 
 
    function handleAddCart(id){
     console.log(id) 
@@ -25,9 +25,9 @@ export default function Menu({menu}) {
             </tr>
         </thead>
         <tbody>
-        {menu.extendedIngredients?.map((r) => {  
-                return <MenuDisplay handleAddCart={handleAddCart} aisle={r.aisle} key={r.id} name={r.name} price={r.amount}/> 
-            })} 
+        {/* {menu.map((r) => {  
+                return <MenuDisplay handleAddCart={handleAddCart} aisle={r.aisle} key={r.id} name={r.name} price={r.price}/> 
+            })}  */}
         </tbody>
     </table>
     </div>

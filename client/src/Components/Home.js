@@ -5,7 +5,7 @@ export default function Home() {
     const [menu,setMenu] = useState([])
 
     useEffect(() => {
-        fetch("https://api.spoonacular.com/recipes/716429/information?includeNutrition=false&apiKey=e1ffb6e25dff428c9f521caa613110e1")
+        fetch("/products")
         .then(response => response.json()) 
         .then(data => {
             //console.log(data)

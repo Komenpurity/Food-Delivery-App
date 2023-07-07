@@ -1,10 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import CurrentOrderDisplay from './CurrentOrderDisplay'
 
 export default function CurrentOrder() {
+    const[order,setOrder] = useState([]) 
     const[name,setName] = useState("")
     const[product,setProduct] = useState("")
     const[address,setAddress] = useState("")
     const[amount,setAmount] = useState("") 
+
+    useEffect(() => {
+        fetch("/orders")
+        .then(response => response.json())
+        .then(data => {
+           console.log(data)
+            setOrder(data)
+        })
+    },[]
+    )
+
 
  function handleAddOrders(e){
     e.preventDefault()
@@ -36,27 +49,19 @@ export default function CurrentOrder() {
     <table className="table table-striped table-bordered">
         <thead>
             <tr>
-            <th>Name</th>
-            <th>Price</th>
+            <th>Product_id</th>
+            <th>Address</th>
+            <th>Product</th>
             <th>Amount</th>
+            <th>Price</th>
             <th>Action</th> 
             <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr > 
-                <td>Cheesy Pizza</td>
-                <td>14.99</td>
-                <td>1</td>
-                <td><button type="click"  className="btn btn-danger">Delete</button></td>
-            </tr>
-
-            <tr> 
-            <td>Greek Pizza</td>
-            <td>14.99</td>
-            <td>2</td>
-            <td><button type="click" className="btn btn-danger">Delete</button></td>
-            </tr>
+           {order.map(r => {
+               return  <CurrentOrderDisplay product_id ={r.product_id} address={r.address} product={r.product} amount={r.amount} price={r.price} />
+            })} 
         </tbody>
     </table>
 
