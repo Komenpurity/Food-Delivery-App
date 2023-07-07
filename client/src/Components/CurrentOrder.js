@@ -57,13 +57,6 @@ export default function CurrentOrder() {
             <td>2</td>
             <td><button type="click" className="btn btn-danger">Delete</button></td>
             </tr>
-
-            <tr> 
-            <td>Chicken Pizza</td>
-            <td>15.99</td> 
-            <td>1</td>
-            <td><button type="click"className="btn btn-danger">Delete</button></td>
-            </tr>
         </tbody>
     </table>
 

@@ -6,7 +6,7 @@ export default function Menu({menu}) {
    // console.log(menu.ingredients) 
 
    function handleAddCart(id){
-    fetch(`https://private-anon-ce41ed15ac-pizzaapp.apiary-mock.com/restaurants/2/menu`)
+    console.log(id) 
    }
 
   return (
