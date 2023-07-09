@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import Cart from '../Cart'
 
 export default function Navbar() {
 
@@ -22,6 +21,10 @@ export default function Navbar() {
       </li>
 
       <li className="nav-item active">
+        <Link to="/cart" className="nav-link text-white">Cart</Link> 
+      </li>
+
+      <li className="nav-item active">
         <Link to="/" className="nav-link text-white">Signup</Link>
       </li>
 
@@ -30,7 +33,6 @@ export default function Navbar() {
       </li>
         
     </ul>
-      <Cart />
   </nav>
   )
 }

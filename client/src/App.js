@@ -6,6 +6,7 @@ import Login from './Components/Login/Login'
 import Search from './Components/Search'
 import Navbar from './Components/Navbar/Navbar'
 import CurrentOrder from './Components/CurrentOrder';
+import Cart from './Components/Cart';
 
 export default function App() {
   return(
@@ -17,6 +18,7 @@ export default function App() {
           <Route path = "/" element = {<Auth/>}/>   
           <Route path = "/search" element = {<Search/>}/> 
           <Route path = "/current" element = {<CurrentOrder/>}/> 
+          <Route path = "/cart" element = {<Cart/>}/>  
          </Routes> 
       </BrowserRouter>
   )

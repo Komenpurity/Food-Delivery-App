@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MenuDisplay from './MenuDisplay'
 import CoverImg from './CoverImg'
+import Cart from './Cart'
 
 export default function Menu({menu}) { 
+  const[cart,setCart] = useState([])
    // console.log(menu) 
 
    function handleAddCart(id){
-    console.log(id) 
-   }
+      fetch(`/products/${id}`) 
+      .then((r) => r.json())
+      .then((data) => {
+        //console.log(data)
+        addCart(data) 
+      })
+    }
+
+    function addCart(data){
+      setCart([...cart,data])  
+      console.log(cart) 
+    }
+
 
   return (
     <div className='container p-1'>
@@ -26,10 +39,11 @@ export default function Menu({menu}) {
         </thead>
         <tbody>
            {menu?.map((r) => {  
-                return <MenuDisplay handleAddCart={handleAddCart} aisle={r.aisle} key={r.id} name={r.name} price={r.price}/> 
+                return <MenuDisplay handleAddCart={handleAddCart} aisle={r.aisle} id={r.id} name={r.name} price={r.price}/> 
             })} 
         </tbody>
     </table>
+            <Cart cart={cart}/> 
     </div>
   )
 }
