@@ -61,7 +61,7 @@ export default function CurrentOrder() {
             </tr>
         </thead>
         <tbody>
-          {order.map((r,index)=> { 
+          {order.map((r,index) => {  
                return  <CurrentOrderDisplay key={index} product_id ={r.product_id} address={r.address} product={r.product} amount={r.amount} price={r.price} />
             })}  
         </tbody>
