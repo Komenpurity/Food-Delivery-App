@@ -21,6 +21,7 @@ class OrdersController < ApplicationController
         order = Order.find(params[:id])
         order.destroy 
         head :no_content
+        render json: {}
     end
 
     private

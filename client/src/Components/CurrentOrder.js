@@ -43,6 +43,17 @@ export default function CurrentOrder() {
  }
 
 
+ function handleDelete(id){
+    fetch(`/orders/${id}`, {  
+        method: "DELETE"
+      })
+        .then((r) => r.json())
+        .then((data) => { 
+              console.log(data) 
+        });
+ }
+
+
   return (
     <div className='container'>
     <h5 className='display-5 text-center'>Current Orders</h5>
@@ -61,7 +72,7 @@ export default function CurrentOrder() {
         </thead>
         <tbody>
           {order.map((r,index) => {  
-               return  <CurrentOrderDisplay key={index} product_id ={r.product_id} address={r.address} product={r.product} amount={r.amount} price={r.price} />
+               return  <CurrentOrderDisplay id={r.id} index={index} handleDelete={handleDelete}  product_id ={r.product_id} address={r.address} product={r.product} amount={r.amount} price={r.price} />
             })}  
         </tbody>
     </table>
