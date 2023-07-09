@@ -3,7 +3,7 @@ import CurrentOrderDisplay from './CurrentOrderDisplay'
 
 export default function CurrentOrder() {
     const[order,setOrder] = useState([]) 
-    const[name,setName] = useState("")
+    const[product_id,setProductId] = useState("")
     const[product,setProduct] = useState("")
     const[address,setAddress] = useState("")
     const[amount,setAmount] = useState("") 
@@ -24,13 +24,12 @@ export default function CurrentOrder() {
     e.preventDefault()
 
     const formData = {
-        name:name,
         amount:amount,
         product:product,
         address:address 
     }
 
-    fetch("", {
+    fetch("/orders", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -70,8 +69,8 @@ export default function CurrentOrder() {
     <form className='p-4' onSubmit={handleAddOrders}> 
         <h6 className='display-6'>Place your Order</h6>
         <div class="form-group">
-            <label>Customer Name</label>
-            <input type="name" class="form-control" value={name} onChange={e => setName(e.target.value)}  placeholder="Enter name" />
+            <label>Product_id </label>
+            <input type="name" class="form-control" value={product_id} onChange={e => setProductId(e.target.value)}  placeholder="Enter product id" />
         </div>
 
         <div class="form-group">

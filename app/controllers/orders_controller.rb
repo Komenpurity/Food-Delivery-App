@@ -9,8 +9,7 @@ class OrdersController < ApplicationController
     
     def create
         orders = Order.create!(order_params) 
-        order = Order.find(order.product_id) 
-        render json: order, status: :created 
+        render json: orders, status: :created 
     end
 
     def show
@@ -27,7 +26,7 @@ class OrdersController < ApplicationController
     private
 
     def order_params
-        params.permit(:address, :product, :name, :amount) 
+        params.permit(:address, :product, :product_id, :amount) 
     end
 
     def render_unprocessable_entity_response(exception)
