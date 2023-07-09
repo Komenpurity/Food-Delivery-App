@@ -12,12 +12,13 @@ export default function CurrentOrder() {
         fetch("/orders")
         .then(response => response.json())
         .then(data => {
-           console.log(data)
+           //console.log(data)
             setOrder(data)
         })
     },[]
     )
 
+    //console.log({order})  
 
  function handleAddOrders(e){
     e.preventDefault()
@@ -42,6 +43,7 @@ export default function CurrentOrder() {
     
  }
 
+
   return (
     <div className='container'>
     <h5 className='display-5 text-center'>Current Orders</h5>
@@ -59,9 +61,9 @@ export default function CurrentOrder() {
             </tr>
         </thead>
         <tbody>
-           {order.map(r => {
-               return  <CurrentOrderDisplay product_id ={r.product_id} address={r.address} product={r.product} amount={r.amount} price={r.price} />
-            })} 
+          {order.map((r,index)=> { 
+               return  <CurrentOrderDisplay key={index} product_id ={r.product_id} address={r.address} product={r.product} amount={r.amount} price={r.price} />
+            })}  
         </tbody>
     </table>
 

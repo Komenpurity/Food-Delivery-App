@@ -25,9 +25,9 @@ export default function Menu({menu}) {
             </tr>
         </thead>
         <tbody>
-        {/* {menu.map((r) => {  
+           {menu?.map((r) => {  
                 return <MenuDisplay handleAddCart={handleAddCart} aisle={r.aisle} key={r.id} name={r.name} price={r.price}/> 
-            })}  */}
+            })} 
         </tbody>
     </table>
     </div>

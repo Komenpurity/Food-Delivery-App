@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function CurrentOrderDisplay({product_id,address,price,product,amount}) {
+export default function CurrentOrderDisplay({product_id,key,address,price,product,amount}) {
   return (
-         <tr > 
+         <tr key={key}>  
             <td>{product_id}</td>
             <td>{address}</td>
             <td>{product}</td>
