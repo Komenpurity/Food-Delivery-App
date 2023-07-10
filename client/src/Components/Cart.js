@@ -3,7 +3,7 @@ import CartDisplay from './CartDisplay'
 
 export default function Cart({cart}) { 
   return (
-    <div> 
+    <div className=''> 
         <h5 className='p-2'>Cart <i className="bi bi-cart"></i></h5>
 
         <table className="table table-striped table-bordered">
@@ -12,7 +12,6 @@ export default function Cart({cart}) {
             <th>Aisle</th>
             <th>Name</th>
             <th>Price</th>
-            <th>Action</th> 
             <th></th>
             </tr>
         </thead>

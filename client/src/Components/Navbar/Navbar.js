@@ -13,16 +13,12 @@ export default function Navbar() {
       </li>   
 
       <li className="nav-item active">
-        <Link to="/search" className="nav-link text-white">Search</Link>
-      </li>
-
-      <li className="nav-item active">
         <Link to="/current" className="nav-link text-white">CurrentOrder</Link>
       </li>
 
       <li className="nav-item active">
-        <Link to="/cart" className="nav-link text-white">Cart</Link> 
-      </li>
+        <Link to="/search" className="nav-link text-white">Search</Link>
+      </li>   
 
       <li className="nav-item active">
         <Link to="/" className="nav-link text-white">Signup</Link>

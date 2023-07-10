@@ -28,8 +28,8 @@ export default function CurrentOrder() {
         product:product,
         address:address 
     }
-
-    fetch("/orders", {
+    
+        fetch("/orders", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

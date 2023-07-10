@@ -11,7 +11,7 @@ export default function Menu({menu}) {
       fetch(`/products/${id}`) 
       .then((r) => r.json())
       .then((data) => {
-        //console.log(data)
+        console.log(data)
         addCart(data) 
       })
     }
@@ -25,6 +25,7 @@ export default function Menu({menu}) {
   return (
     <div className='container p-1'>
       <CoverImg />
+      <Cart cart={cart}/> 
     <h6 className='display-6 text-center'>Groceries</h6>   
     <hr/>
     <table className="table table-striped table-bordered">
@@ -43,7 +44,7 @@ export default function Menu({menu}) {
             })} 
         </tbody>
     </table>
-            <Cart cart={cart}/> 
+            
     </div>
   )
 }

@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create" 
 
   resources :products, only: [:index,:show]  
-  resources :orders, only: [:index,:create,:show,:destroy]   
+  resources :orders, only: [:index,:create,:show,:destroy]
+  resources :carts, only: [:index,:show]     
 end 
